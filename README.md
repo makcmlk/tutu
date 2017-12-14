@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Создать новое rails-приложение в отдельном репозитории (!!!)
+Используя scaffolding создать ресурс RailwayStation (как показано в скринкасте)
+Используя scaffolding создать ресурс Train, который имеет номер в качестве атрибута
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+В качестве ответа приложить ссылку на репозиторий с новым rails-приложением. 
