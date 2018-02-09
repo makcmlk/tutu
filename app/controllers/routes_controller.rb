@@ -1,6 +1,4 @@
 class RoutesController < ApplicationController
-  before_action :set_route, only: [:show, :edit, :update, :destroy]
-
   def index
     @routes = Route.all
   end
@@ -41,9 +39,6 @@ class RoutesController < ApplicationController
   def destroy
     @route.destroy
     redirect_to routes_path
-  end
-
-  def set_route
   end
 
   private
