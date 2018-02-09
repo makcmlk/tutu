@@ -1,15 +1,32 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong> Titleof route:</strong>
   <%= @route.title %>
 </p>
 
 <p>
-  <strong>Title:</strong>
+  <strong> Trains on this route:</strong>
   <ul>
+    <% if @trains_on_route.empty? %>
+    No trains on this route.
+    <% else %>
     <% @trains_on_route.each do |train| %>
         <li> <%= train.number %> </li>
+    <% end %>
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  <strong> Stations in this route:</strong>
+  <ul>
+    <% if @stations.empty? %>
+    No stations in this route.
+    <% else %>
+    <% @stations.each do |station| %>
+        <li> <%= station.railway_station.title %> </li>
+    <% end %>
     <% end %>
   </ul>
 </p>
