@@ -5,5 +5,14 @@
   <%= @route.title %>
 </p>
 
+<p>
+  <strong>Title:</strong>
+  <ul>
+    <% @trains_on_route.each do |train| %>
+        <li> <%= train.number %> </li>
+    <% end %>
+  </ul>
+</p>
+
 <%= link_to 'Edit', edit_route_path(@route) %> |
 <%= link_to 'Back', routes_path %>

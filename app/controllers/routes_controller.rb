@@ -6,6 +6,8 @@ class RoutesController < ApplicationController
   end
 
   def show
+    @route = Route.find(params[:id])
+    @trains_on_route = Train.where(route_id: params[:id])
   end
 
   def new
@@ -39,15 +41,9 @@ class RoutesController < ApplicationController
   end
 
   def set_route
-    @route = Route.find(params[:id])
-    render :trains_list
   end
 
   private
-
-  def trains_list
-    @trains
-  end
 
   def route_params
     params.require(:route).permit(:title)
