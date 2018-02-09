@@ -1,8 +1,30 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <div class="field">
   <strong>Number:</strong>
   <%= @train.number %>
+  </div>
+
+  <div class="field">
+  <strong>Cureren Station:</strong>
+  <% if @train.current_station.present?%>
+    <%= @train.current_station.title %>
+  <% else %>
+    Not on Station
+  <% end %>
+</div>
+
+
+  <div class="field">
+  <strong>Route:</strong>
+  <% if @train.route.present?%>
+    <%= @train.route.title %>
+  <% else %>
+    No route
+  <% end %>
+  </div>
+
 </p>
 
 <%= link_to 'Edit', edit_train_path(@train) %> |

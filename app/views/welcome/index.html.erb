@@ -1,3 +1,29 @@
-<h1>Yo!</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<p> MOST AWESOME RAILWAY MWAHAHAHA!</p>
+
+<%= link_to 'Список поездов: ', trains_path %>
+  <ul>
+  <% @trains.each do |train| %>
+    <li>
+      <%= train.number %>
+    </li>
+  <% end %>
+</ul>
+
 <%= link_to 'Список станций: ', railway_stations_path %>
+<ul>
+<% @railway_stations.each do |railway_station| %>
+  <li>
+    <%= railway_station.title %>
+  </li>
+<% end %>
+</ul>
+
+
+<%= link_to 'Список маршрутов: ', routes_path %>
+<ul>
+<% @routes.each do |route| %>
+  <li>
+    <%= route.title %>
+  </li>
+<% end %>
+</ul>

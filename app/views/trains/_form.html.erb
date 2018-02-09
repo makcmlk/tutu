@@ -16,6 +16,17 @@
     <%= f.number_field :number %>
   </div>
 
+  <div class="field">
+    <%= f.label :current_station %>
+    <%= f.select :current_station_id, RailwayStation.all.collect {|p| [ p.title, p.id ] } %>
+  </div>
+
+  <div class="field">
+    <%= f.label :route %>
+    <%= f.select :route_id, Route.all.collect {|p| [ p.title, p.id ] } %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
