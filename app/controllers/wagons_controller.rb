@@ -28,11 +28,9 @@ class WagonsController < ApplicationController
 
     respond_to do |format|
       if @wagon.save
-        format.html { redirect_to @wagon, notice: 'Wagon was successfully created.' }
-        format.json { render :show, status: :created, location: @wagon }
+        format.html { redirect_to wagons_path, notice: 'Wagon was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @wagon.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -69,6 +67,6 @@ class WagonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wagon_params
-      params.fetch(:wagon, {})
+      params.require(:wagon).permit(:train_id, :comfort, :bottom_seats, :top_seats)
     end
 end

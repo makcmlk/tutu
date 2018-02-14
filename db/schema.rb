@@ -62,8 +62,13 @@ ActiveRecord::Schema.define(version: 20180212223022) do
   end
 
   create_table "wagons", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "comfort"
+    t.integer  "bottom_seats"
+    t.integer  "top_seats"
+    t.integer  "train_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["train_id"], name: "index_wagons_on_train_id"
   end
 
 end

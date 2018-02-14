@@ -12,6 +12,17 @@
   <% end %>
 
   <div class="actions">
+    <div class="field">
+      <%= f.label :train_id %>
+      <%= f.select :train_id, Train.all.collect {|t| [ t.number, t.id ] } %>
+      <%= f.label :comfort %>
+      <%= f.select :comfort, ['Buisness','Econom'] %>
+      <%= f.label :bottom_seats %>
+      <%= f.number_field :bottom_seats %>
+      <%= f.label :top_seats %>
+      <%= f.number_field :top_seats %>
+
+    </div>
     <%= f.submit %>
   </div>
 <% end %>
