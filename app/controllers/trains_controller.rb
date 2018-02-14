@@ -10,6 +10,10 @@ class TrainsController < ApplicationController
   # GET /trains/1
   # GET /trains/1.json
   def show
+    @count_of_buisness = Wagon.where(train_id: params[:id]).where(comfort: 'Buisness').count
+    @count_of_econom = Wagon.where(train_id: params[:id]).where(comfort: 'Econom').count
+    @bottom_seats = Wagon.where(train_id: params[:id]).sum(:bottom_seats)
+    @top_seats = Wagon.where(train_id: params[:id]).sum(:top_seats)
   end
 
   # GET /trains/new

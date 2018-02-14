@@ -1,0 +1,28 @@
+<%= form_for(wagon) do |f| %>
+  <% if wagon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(wagon.errors.count, "error") %> prohibited this wagon from being saved:</h2>
+
+      <ul>
+      <% wagon.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <div class="field">
+      <%= f.label :train_id %>
+      <%= f.select :train_id, Train.all.collect {|t| [ t.number, t.id ] } %>
+      <%= f.label :comfort %>
+      <%= f.select :comfort, ['Buisness','Econom'] %>
+      <%= f.label :bottom_seats %>
+      <%= f.number_field :bottom_seats %>
+      <%= f.label :top_seats %>
+      <%= f.number_field :top_seats %>
+
+    </div>
+    <%= f.submit %>
+  </div>
+<% end %>
